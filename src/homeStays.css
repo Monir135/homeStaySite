@@ -194,10 +194,11 @@ ul li {
 }*/
 /* Hidden by default */
 .booking-form {
+    width: 30%;
     display: none; /* hidden by default */
     position: fixed; /* keep it floating above content */
     background-color: #003300;
-    padding: 1rem;
+    padding: 2rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
