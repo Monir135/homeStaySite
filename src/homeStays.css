@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #002b00;
+    color: white;
+
+    
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* hides any overflow from animations or wide elements */
+  scroll-behavior: smooth;
+  
+}
+
+.main-page-header {
+    background-color: #002b00;
+
+}
+
+.home-stay-heading {
+    position: relative;
+    color: darkgreen;
+    text-align: center;
+    padding-top: 0.5rem;
+    display: inline-block;
+    white-space: nowrap;
+    animation: animateHeading 6s ease-in-out infinite;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    text-shadow: 0 0 8px limegreen;
+}
+
+@keyframes animateHeading {
+    0% {
+        transform: translateX(calc(-50% + 100vw));
+        color: limegreen;
+        text-shadow: 0 0 8px limegreen;
+    }
+
+    30%,
+    70% {
+        transform: translateX(-50%);
+        color: yellowgreen;
+        text-shadow: 0 0 10px yellowgreen;
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 100vw));
+        color: limegreen;
+        text-shadow: 0 0 8px limegreen;
+    }
+}
+
+
+.navbar-page-link {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+
+}
+
+.navbar-page-link a {
+    font-weight: bold;
+    color: #66cc66;
+    /* medium green, distinct from heading glow */
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-page-link a:hover {
+    color: #ffffff;
+    /* white on hover for maximum readability */
+    transform: scale(1.2);
+    /* subtle growth effect */
+    text-shadow: 0 0 4px #66cc66;
+    /* optional subtle glow */
+}
+.homestay-image-container{
+    width: 100%;
+}
+.home-stay-picture {
+    width: 100%;
+    display: block;
+}
+
+.about-homestay {
+    margin-top: 2rem;
+}
+
+.hero-tagline {
+    text-align: center;
+    font-size: 2rem;
+    /* bigger for hero section */
+    margin-top: 1rem;
+    margin-left: 0;
+    text-shadow: 0 0 10px yellowgreen;
+    color: #dfffdf;
+    /* slightly lighter for contrast */
+}
+
+.hero-tagline {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.welcome-heading,
+h3 {
+    margin-top: 0.5rem;
+    text-decoration: wavy;
+    font-weight: 700;
+    font-size: x-large;
+    text-shadow: 0 0 4px yellowgreen;
+    margin-left: 1rem;
+}
+
+p {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    text-align: left;
+    text-wrap-mode: wrap;
+    font-weight: 300;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    column-gap: 1rem;
+}
+
+.room-image {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    
+}
+.bring-up{
+transform: scale(1.03) translateY(-20px);
+box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .rooms-grid {
+        grid-template-columns: 1fr;
+        /* single column on mobile */
+    }
+
+    .room-image {
+        height: 50vw;
+        /* taller on mobile for better proportion */
+    }
+
+}
+
+.room-description {
+    width: 100%;
+    padding: 0 1rem;
+}
+
+ul li {
+    padding: 0 1rem;
+    margin-top: 0.5rem;
+    list-style-position: inside;
+}
+/*
+.booking-form{
+    padding-left: 1rem;
+    display: none;
+}
+.appeared-form{
+    display: initial;
+    z-index: 100;
+}*/
+/* Hidden by default */
+.booking-form {
+    display: none; /* hidden by default */
+    position: fixed; /* keep it floating above content */
+    background-color: #003300;
+    padding: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    z-index: 1000;
+    animation: fadeInPopup 0.3s ease-in-out;
+}
+.close-form{
+position: absolute;
+top: -4px;
+left: 93%;
+color: #FF0000;
+font-weight: bold;
+font-size:large;
+opacity: 0.7;
+}
+.close-form:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+/* When visible */
+.appeared-form {
+    display: block;
+}
+
+/* Optional overlay background */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+/* Show overlay when active */
+.overlay-active {
+    display: block;
+}
+
+@keyframes fadeInPopup {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.room-name {
+    padding: 0 1rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px yellowgreen;
+    color: #dfffdf;
+    font-size: large;
+}
+
+.form-heading {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.label-container {
+    margin-bottom: 0.1rem;
+    margin-top: 0.5rem;
+}
+
+.form-input {
+    width: 11rem;
+    padding: 0.2rem;
+
+}
+
+.select-room,
+.select-guest {
+    width: 11.5rem;
+    padding: 0.2rem;
+}
+
+.confirm-button {
+    margin-top: 16px;
+    font-weight: bold;
+    padding: 12px 7px;
+    color: black;
+    background-color:darkseagreen;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.confirm-button:hover{
+    background-color: black;
+    color: darkseagreen;
+}
+
+
+
+.button-to-book {
+    background-color: darkred;
+    height: 35px;
+    width: 100px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border: none;
+    color: lightcyan;
+    font-weight: bold;
+    border-radius: 5px;
+
+}
+
+.button-to-book:hover {
+    background-color: lightcyan;
+    color: darkred;
+    cursor: pointer;
+}
+
+.footer{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px;
+    border-top: 1px solid forestgreen;
+    margin-top: 35px;
+    font-weight: bold;
+    font-size:medium;
+}
+.homestay-mail,.homestay-phone{
+  color: #66cc66;
+  text-decoration: none;
+}
+.footer p{
+color: gray;
+}
+
+@media (max-width: 768px) {
+    .footer{
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        font-size:large;
+    }
+}
