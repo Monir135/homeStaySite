@@ -210,8 +210,8 @@ ul li {
 
 .close-form{
 position: absolute;
-top: -4px;
-left: 93%;
+top: -0.4%;
+left: 94%;
 color: #FF0000;
 font-weight: bold;
 font-size:large;
@@ -264,8 +264,8 @@ opacity: 0.7;
 }
 
 .form-heading {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+margin-bottom: 1rem;
+
 }
 
 .label-container {
